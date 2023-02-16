@@ -3,7 +3,8 @@
  * main - Entry
  * Return: Always 0
  */
-int main(void){
+int main(void)
+{
     char c;
     int i;
     long int li;
