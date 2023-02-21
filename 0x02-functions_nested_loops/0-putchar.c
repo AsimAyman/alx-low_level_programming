@@ -4,12 +4,8 @@
 * is written by Assem
 * Return: 0
 */
-int main(void)
-{
- /*
- *start point
- */
-_putchar('_');
+int main(void) //Entry point
+{_putchar('_');
 _putchar('p');
 _putchar('u');
 _putchar('t');
