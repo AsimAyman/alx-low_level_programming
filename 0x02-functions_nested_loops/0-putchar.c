@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
 *main - print _putchar
 * is written by Assem
 * Return: 0
