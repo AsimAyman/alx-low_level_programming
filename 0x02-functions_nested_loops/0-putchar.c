@@ -5,7 +5,10 @@
 * Return: 0
 */
 int main(void)
-{/*start point*/
+{
+ /*
+ *start point
+ */
 _putchar('_');
 _putchar('p');
 _putchar('u');
