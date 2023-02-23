@@ -9,7 +9,9 @@ if (n < 0)
 {
 n1 = -n;
 _putchar('-');
-} else{
+} 
+else
+{
 n1 = n;
 }
 if (n1 / 10)
