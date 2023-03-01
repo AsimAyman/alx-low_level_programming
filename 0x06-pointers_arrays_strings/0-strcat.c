@@ -1,3 +1,4 @@
+#include "main.h"
 /**                                                                                                                                  
  * strcat - Concatenates the string pointed to by @src, including the x                                                     
  *          null byte, to the end of the string pointed to by @dest.                                                                 
@@ -18,4 +19,3 @@ char *_strcat(char *dest, const char *src)
                                                                                                                                      
         return (dest);                                                                                                               
 }
-
