@@ -1,5 +1,5 @@
-# 0x00. C - Hello, World
 
+<<<<<<< HEAD
 ## Description
 What you should learn from this project:
 
@@ -60,3 +60,5 @@ What you should learn from this project:
 ## Author
 * **Assem Ayman** - [AsimAyman](https://github.com/AsimAyman)
 
+=======
+>>>>>>> 1a664d2ef8c475e2296949c27efcb3ab0d3c46a5
