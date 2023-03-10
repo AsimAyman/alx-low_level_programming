@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-
-
 /**
  * _isnumber - checks if string is a number
  * @s: string
@@ -54,4 +52,5 @@ int main(int argc, char **argv)
 		printf("%i\n", n);
 	else
 		printf("%s\n", "Error");
-	return (ex);}
+	return (ex);
+}
