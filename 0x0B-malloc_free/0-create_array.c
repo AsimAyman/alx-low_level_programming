@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  * create_array - creates an array of chars, and initializes it with
  * a specific char
@@ -9,21 +10,23 @@
  *
  * Return: Pointer
  */
-char *create_array(unsigned int size, char c){
-    char *pc;
-    if (size<=0)
-	    return (0);
+char *create_array(unsigned int size, char c)
+{
+	unsigned int i;
+	char *s;
 
-    pc = malloc(sizeof(char)*size);
-    if(pc==null)
-    { 
-      return 0;
-    }
+	if (size <= 0)
+		return (0);
 
-    for(int i =0;i<size;i++){
-	    {
-		    *(pc+i)=c;
-	    }    
-	*(pc+i)='\0';
-              return pc; 
+	s = malloc(sizeof(char) * size);
+
+	if (s == 0)
+		return (0);
+
+	for (i = 0; i < size; i++)
+		*(s + i) = c;
+
+	*(s + i) = '\0';
+
+	return (s);
 }
