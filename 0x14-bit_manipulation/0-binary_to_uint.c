@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include "main.h"
 unsigned int binary_to_uint(const char *b){
     int value =0,i =0,j =strlen(b)-1;
     for (i;i<strlen(b);i++){
