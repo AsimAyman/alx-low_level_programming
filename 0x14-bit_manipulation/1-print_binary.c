@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * print_binary: convertes binary to dicimal to binary.
  * @n: binary to be converted,
@@ -16,7 +17,7 @@ void print_binary(unsigned long int n){
         l++;
     } 
     for(int i =l;i>=0;i--){
-        printf("%d",num[i]);
+       _putchar(num[i]);
     }
     free(num);
 }
