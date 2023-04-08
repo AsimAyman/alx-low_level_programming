@@ -1,43 +1,28 @@
 #include "main.h"
+
 /**
- * rev_bin - prints binary representation of number with & and Shift Right
- * operators, but uses recursion to reverse the result
+ * get_bit - returns the value of a bit at a given index
+ * @n: base 10 number
+ * @index: index to print
  *
- * @n: decimal number
- * @check: checks for special case number 0
+ * Return: value of the bit at index index or -1 if an error occured
  *
- * Return: No return
  */
-void rev_bin(unsigned long int n, int check)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	if (check == 1)
-	{
-		_putchar('0');
-		return;
-	}
+	unsigned int i = 0, bit;
 
-	if (n == 0)
-		return;
+	if (index > 63)
+		return (-1);
 
-	rev_bin(n >> 1, check);
-
-	if ((n & 1) == 0)
-		_putchar('0');
+	for (i = 0; i < index; i++)
+		n = n >> 1;
 
 	if ((n & 1) == 1)
-		_putchar('1');
-}
-/**
- * print_binary - prints the binary representation of a number
- * @n: base 10 number
- *
- * Return: No return
- *
- */
-void print_binary(unsigned long int n)
-{
-	if (n == 0)
-		rev_bin(n, 1);
-	else
-		rev_bin(n, 0);
+		bit = 1;
+
+	if ((n & 1) == 0)
+		bit = 0;
+
+	return (bit);
 }
