@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * clear_bit sets the value of a bit 
  * @n: poiner to the number to change 
