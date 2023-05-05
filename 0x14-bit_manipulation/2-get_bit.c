@@ -7,14 +7,10 @@
  */
 int et_bit(unsigend long int n, unsigend int index){
 {
-	unsigned int i =0, b;
-	if (index >63)
-		return (-1);
-	for (i=0;i<index ;i++)
-		n =n >>1;
-	if ((n & 1) ==1) bit =1;
-	if ((n & 1) ==0) bit =1;
-	if ((n & 1) ==0) bit =0;
-        return bit;
-	
+    if (index > 63) {
+        return -1;
+    }
+
+    unsigned long int mask = 1UL << index;
+    return (n & mask) ? 1 : 0;
 }
