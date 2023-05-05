@@ -1,9 +1,10 @@
 #include "main.h"
-/** 
- * get_bit returns the value of a bit a given index 
- * @n: base 10 number
- * @index: index to print
- * Return: value of the bit at index index or -i if an eroor occured
+/**
+ * get_bit - returns the value of a bit at an index in a decimal number
+ * @n: number to search
+ * @index: index of the bit
+ *
+ * Return: value of the bit
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
