@@ -5,18 +5,21 @@
  * @index: index to print
  * Return: value of the bit at index index or -i if an eroor occured
  */
-int get_bit(unsigned long int n,unsigned int index){
+int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i = 0, bit;
 
-	if (index > 63) return (-1);
+	if (index > 63)
+		return (-1);
 
 	for (i = 0; i < index; i++)
 		n = n >> 1;
 
-	if ((n & 1) == 1)bit = 1;
+	if ((n & 1) == 1)
+		bit = 1;
 
-	if ((n & 1) == 0)bit = 0;
+	if ((n & 1) == 0)
+		bit = 0;
 
 	return (bit);
 }
