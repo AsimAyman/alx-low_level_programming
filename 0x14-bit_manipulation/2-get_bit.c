@@ -5,7 +5,7 @@
  * @index: index to print
  * Return: value of the bit at index index or -i if an eroor occured
  */
-int get_bit(unsigend long int n, unsigend int index){
+int get_bit(unsigned long int n, unsigned int index){
 {
 	unsigned int i = 0, bit;
 
