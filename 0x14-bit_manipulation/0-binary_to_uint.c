@@ -9,7 +9,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int res = 0, one, i;
+	unsigned int r = 0, o, i;
 	int l = 0;
 
 	if (b == 0)
@@ -31,8 +31,8 @@ unsigned int binary_to_uint(const char *b)
 			one = 0;
 		else if (b[l] == '1')
 			one = 1;
-		one = one << i;
-		res = res | one;
+		o = o << i;
+		r = r | o;
 	}
-	return (res);
+	return (r);
 }
