@@ -1,34 +1,35 @@
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it tothe POSIX standard output
- * @filename: pointer to text in a file
- * @letters: numbers of letters
- * Return: the actual number of letters it could read and print
+ * create_file - creates a file
+ * @filename: the name of the file to create
+ * @text_content: a NULL terminated string to write to the file
+ * Return: 1 on success, -1 on failure
  */
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, check_write, length = 0;
+int fd, check_write, length = 0;
 
-	if (filename == NULL)
-		return (-1);
+if (filename == NULL)
+	return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 
-	if (fd == -1)
-		return (-1);
+if (fd == -1)
+return (-1);
 
-	if (text_content)
-	{
-		while (text_content[length] != '\0')
+if (text_content)
+{
+while (text_content[length] != '\0')
 			length++;
-		check_write = write(fd, text_content, length);
+check_write = write(fd, text_content, length);
 
-		if (check_write == -1)
-			return (-1);
-	}
+if (check_write == -1)
+return (-1);
+}
 
 	close(fd);
 	return (1);
+	
 }
