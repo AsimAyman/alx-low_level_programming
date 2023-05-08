@@ -1,60 +1,50 @@
 #include "main.h"
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 /**
- * read_textfile - reads a text file and outputs its contents to the standard output
- * @filename: name of the file to read
- * @letters: number of bytes to read from the file
+ * read_textfile -  reads a text file and prints it
+ * to the POSIX standard output
+ * @filename: name of the file
+ * @letters: number of letters it should read and print
  *
- * Return: number of bytes printed to standard output, or 0 on failure
+ * Return: returns the actual number of letters it could read and print
+ * 0 if file cannot be opened or read
+ * 0 if filename is NULL
+ * 0 if write fails or does not write expected amount of bytes
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t n_read, n_written;
-	char *buffer;
+    int fd, ret_read, ret_write;
+    char *buf;
 
-	if (filename == NULL) {
-		return (0);
-	}
+    if (filename == 0)
+        return (0);
 
-	buffer = malloc(sizeof(char) * (letters + 1));
-	if (buffer == NULL) {
-		return (0);
-	}
+    buf = malloc(letters + 1);
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1) {
-		free(buffer);
-		return (0);
-	}
+    if (buf == 0)
+        return (0);
 
-	n_read = read(fd, buffer, letters);
-	if (n_read == -1) {
-		free(buffer);
-		close(fd);
-		return (0);
-	}
-	
-	if (n_read == 0) {
-		close(fd);
-		free(buffer);
-		return (0);
-	}
+    fd  = open(filename, O_RDONLY);
 
-	n_written = write(STDOUT_FILENO, buffer, n_read);
-	
-	if (n_written == -1 || n_written != n_read) {
-		free(buffer);
-		close(fd);
-		return (0);
-	}
+    if (fd == -1)
+        return (free(buf), 0);
 
-	free(buffer);
-	close(fd);
-	return (n_written);
+    ret_read = read(fd, buf, letters);
+
+    if (ret_read == -1)
+        return (free(buf), 0);
+
+    buf[letters] = '\0';
+
+    ret_write = write(STDOUT_FILENO, buf, ret_read);
+    if (ret_write == -1)
+        return (free(buf), 0);
+
+    free(buf);
+    close(fd);
+    return (ret_write);
 }
