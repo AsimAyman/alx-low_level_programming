@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _isdigit - check if the c it digit or not
  *@c:is a value to be checked 
@@ -6,5 +5,5 @@
  */
 int _isdigit(int c)
 {
-    return (if(c <= '9' && c >= '0'));
+    return (c <= 9 && c >= 0);
 }			   
