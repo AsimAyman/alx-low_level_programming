@@ -1,3 +1,4 @@
+#include "main.h"
 /** 
  * reset - takes a ponter to int and update the value by 98
  * @*n: pointer to the int to be changed
