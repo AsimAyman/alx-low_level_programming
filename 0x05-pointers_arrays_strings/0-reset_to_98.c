@@ -1,9 +1,14 @@
 #include "main.h"
-/** 
- * reset - takes a ponter to int and update the value by 98
- * @*n: pointer to the int to be changed
- * Return : return nothing
+
+/**
+ * reset_to_98 - takes a pointer to an int as parameter and updates
+ * the value it points to to 98.
+ * @n: integer
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-void rest_to_98(int *n){
-	*n =98;
+void reset_to_98(int *n)
+{
+	*n = 98;
 }
