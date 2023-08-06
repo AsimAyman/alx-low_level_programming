@@ -40,4 +40,3 @@ res += currentBit;
 }
 return (res);
 }
-:
