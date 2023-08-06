@@ -10,7 +10,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-unsigned int res = 0, currentBit;
+unsigned int res = 0, currentBit, i;
 int l = 0;
 
 if (b == 0)
@@ -26,7 +26,7 @@ return (0);
 l++;
 }
 l--;
-for (int i = 0; l >= 0; i++, l--)
+for (i = 0; l >= 0; i++, l--)
 {
 if (b[i] == '1')
 {
